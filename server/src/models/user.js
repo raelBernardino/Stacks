@@ -4,22 +4,19 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
   email: {
     type: String,
-    require: true,
-    unique: true
+    required: true,
+    unique: true,
   },
   username: {
     type: String,
-    require: true,
-    unique: true
+    required: true,
+    unique: true,
   },
-  passowrd: {
+  password: {
     type: String,
-    require: true,
-    unique: true
+    required: true,
   },
   courses: [{ type: Schema.Types.ObjectId, ref: 'Course' }]
 })
-
-
 
 module.exports = mongoose.model('User', userSchema)
